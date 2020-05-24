@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一些常见服务器与协议的认识</title>
+    <url>/2020/05/24/%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%AE%A4%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h1><a id="more"></a>
+
+<p>DHCP地址池：ip 子网掩码 网关 dns<br>dhcp原理：1.客户机发送DHCP discover包请求ip 包含客户机mac地址  2.服务器响应DHCP  oferr包提供IP (同时会收到多个offer包，按先后顺序决定选择)  3.客户机发送DHCP request 包确认选择IP    4.服务器发送DHCP  ack包确定租约并提供完整参数<br>攻击：伪造mac地址  伪造DHCP服务器  可调整交换机配置进行防御<br>租期到百分之五十request包进行续约，若无响应则在87.5时发送r包，若还无响应则释放IP重新获得IP，当依然无回应，则网卡自动获得IP169.254.x.x，此IP属于全球通一无效地址，只能实现临时内网通信<br>UDP67，68端口<br>ipconfig  /release  释放IP<br>ipconfig /renew 获得IP 如果已有IP则续约<br>防火墙默认拦截</p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>web安全</category>
+        <category>千峰</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>协议</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>first blog</title>
     <url>/2020/05/24/first-blog/</url>
     <content><![CDATA[<p><strong>历经四天终于搭好了GitHub+hexo的博客,内容会慢慢开始补充的</strong></p>
@@ -23,22 +40,5 @@
       <categories>
         <category>笔记</category>
       </categories>
-  </entry>
-  <entry>
-    <title>一些常见服务器与协议的认识</title>
-    <url>/2020/05/24/%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%AE%A4%E8%AF%86/</url>
-    <content><![CDATA[<h1 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h1><a id="more"></a>
-
-<p>DHCP地址池：ip 子网掩码 网关 dns<br>dhcp原理：1.客户机发送DHCP discover包请求ip 包含客户机mac地址  2.服务器响应DHCP  oferr包提供IP (同时会收到多个offer包，按先后顺序决定选择)  3.客户机发送DHCP request 包确认选择IP    4.服务器发送DHCP  ack包确定租约并提供完整参数<br>攻击：伪造mac地址  伪造DHCP服务器  可调整交换机配置进行防御<br>租期到百分之五十request包进行续约，若无响应则在87.5时发送r包，若还无响应则释放IP重新获得IP，当依然无回应，则网卡自动获得IP169.254.x.x，此IP属于全球通一无效地址，只能实现临时内网通信<br>UDP67，68端口<br>ipconfig  /release  释放IP<br>ipconfig /renew 获得IP 如果已有IP则续约<br>防火墙默认拦截</p>
-]]></content>
-      <categories>
-        <category>网络安全</category>
-        <category>web安全</category>
-        <category>千峰</category>
-      </categories>
-      <tags>
-        <tag>服务器</tag>
-        <tag>协议</tag>
-      </tags>
   </entry>
 </search>
