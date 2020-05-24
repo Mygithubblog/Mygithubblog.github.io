@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>first blog</title>
+    <url>/2020/05/24/first-blog/</url>
+    <content><![CDATA[<p><strong>历经四天终于搭好了GitHub+hexo的博客,内容会慢慢开始补充的</strong></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>使用hexo的注意事项</title>
+    <url>/2020/05/24/%E4%BD%BF%E7%94%A8hexo%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>尽管 Hexo 支持 MarkDown，但是我们却不能像写单独的 MarkDown 文档时那样肆无忌惮。由于我们所写的文档是需要被解析为静态网页文件的，所以我们必须严格遵从 Hexo 的规范，这样才能解析出条理清晰的静态网页文件。</p>
+<a id="more"></a>
+
+<ol>
+<li>hexo new “文件名”即在.\source\_posts目录下创建一个md文档，然后就可以随便写如内容了。</li>
+<li>更新博客时输入hexo clean清除缓存，hexo g生成静态文件，hexo s开启本地服务器，完成以上三步即可更新</li>
+<li>hexo d同步到Github</li>
+<li><code>&lt;!--more--&gt;</code> 在想要作为摘要的内容后加上这段代码即可设置文章摘要</li>
+<li>标签与分类记得-   后面加一个空格</li>
+</ol>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>一些常见服务器与协议的认识</title>
+    <url>/2020/05/24/%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E5%8D%8F%E8%AE%AE%E7%9A%84%E8%AE%A4%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h1><a id="more"></a>
+
+<p>DHCP地址池：ip 子网掩码 网关 dns<br>dhcp原理：1.客户机发送DHCP discover包请求ip 包含客户机mac地址  2.服务器响应DHCP  oferr包提供IP (同时会收到多个offer包，按先后顺序决定选择)  3.客户机发送DHCP request 包确认选择IP    4.服务器发送DHCP  ack包确定租约并提供完整参数<br>攻击：伪造mac地址  伪造DHCP服务器  可调整交换机配置进行防御<br>租期到百分之五十request包进行续约，若无响应则在87.5时发送r包，若还无响应则释放IP重新获得IP，当依然无回应，则网卡自动获得IP169.254.x.x，此IP属于全球通一无效地址，只能实现临时内网通信<br>UDP67，68端口<br>ipconfig  /release  释放IP<br>ipconfig /renew 获得IP 如果已有IP则续约<br>防火墙默认拦截</p>
+]]></content>
+      <categories>
+        <category>网络安全</category>
+        <category>web安全</category>
+        <category>千峰</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>协议</tag>
+      </tags>
   </entry>
 </search>
